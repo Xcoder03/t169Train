@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.t169_train_schedule.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_schedule"
+            app:destination="@id/schedule" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.example.t169_train_schedule.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_schedule"
+            app:destination="@id/schedule" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/schedule"
+        android:name="com.example.t169_train_schedule.Schedule"
+        android:label="Schedule"
+        tools:layout="@layout/fragment_schedule"
+        >
+        <action
+            android:id="@+id/action_schedule_to_mainSchedule"
+            app:destination="@id/mainSchedule" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainSchedule"
+        android:name="com.example.t169_train_schedule.MainSchedule"
+        android:label="MainSchedule">
+    <action
+        android:id="@+id/action_mainSchedule_to_FirstFragment"
+        app:destination="@id/FirstFragment"
+        app:popUpTo="@+id/FirstFragment"
+        app:popUpToInclusive="true"
+        />
+
+    </fragment>
+</navigation>
